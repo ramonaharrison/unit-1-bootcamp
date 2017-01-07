@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -17,56 +18,72 @@ public class UsingAPIs {
         UsingAPIs api = new UsingAPIs();
         Set<String> twoCities = new HashSet<String>();
         api.addTextToSet(citiesFile, twoCities);
-//        try {
-//            Scanner sc = new Scanner(citiesFile);
-//            while (sc.hasNext()) {
-//                String word = sc.next();
-//                twoCities.add(word);
-//            }
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
+
         Set<String> mobyDick = new HashSet<String>();
         api.addTextToSet(mobyFile, mobyDick);
 
-//        api.printSetElements(mobyDick, "Moby Dick has unique words count of ");
-        api.printSetElements(twoCities, "A Tale of Two Cities has unique words count of ");
+        Set<String> intersection = new HashSet<String>(twoCities);
+        intersection.retainAll(mobyDick);
+        System.out.println(intersection);
+        System.out.println("The intersection set has a count of " + intersection.size());
 
+        Set<String> union = new HashSet<String>(twoCities);
+        union.addAll(mobyDick);
+        System.out.println("The intersection set has a count of " + union.size());
 
-//        System.out.println("A Tale of Two Cities has unique words count of " + twoCities.size());
-//        for (String text : twoCities) {
+        api.unionIterate(union);
+//        api.printSetElements(intersection, "Intersection");
+//        api.printSetElements(twoCities, "A Tale of Two Cities");
+//        api.printSetElements(mobyDick, "Moby Dick");
+    }
+
+//    private void printSetElements(Set<String> set, String setName) {
+//        System.out.println(setName + " has unique words count of " + set.size());
+//        for (String text : set) {
 //            System.out.println(text);
 //        }
-//        System.out.println("Moby Dick has unique words count of " + mobyDick.size());
-//        for (String text : mobyDick) {
-//            System.out.println(text);
-//        }
+//    }
 
-    }
-    private void printSetElements(Set<String> set, String println) {
-        System.out.println(println+ set.size());
-        for (String text : set) {
-            System.out.println(text);
-        }
-    }
     private void addTextToSet(File file, Set<String> set) {
         try {
             Scanner sc = new Scanner(file);
             while (sc.hasNext()) {
                 String word = sc.next();
                 int end = word.length() - 1;
-                while (!word.isEmpty()
-                        && !Character.isAlphabetic(word.charAt(end))
-                        && !Character.isDigit(word.charAt(end))) {
+                int beginning = 0;
+                while (!word.isEmpty() &&
+                        !Character.isAlphabetic(word.charAt(end)) &&
+                        !Character.isDigit(word.charAt(end))) {
                     word = word.substring(0, end);
                     if (end > 0) {
                         end--;
                     }
                 }
-                set.add(word.toLowerCase());
+                while (!word.isEmpty() &&
+                        !Character.isAlphabetic(word.charAt(0)) &&
+                        !Character.isDigit(word.charAt(0))) {
+                    end = word.length();
+                    if (beginning < end) {
+                        beginning++;
+                        word = word.substring(beginning, end);
+                    }
+                }
+                if(!word.isEmpty()) {
+                    set.add(word.toLowerCase());
+                }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void unionIterate(Set<String> set) {
+        System.out.println("The contents of this set: ");
+        Iterator<String> itr = set.iterator();
+
+        while(itr.hasNext()) {
+            String item = itr.next();
+            System.out.println(item + "");
         }
     }
 }
