@@ -46,5 +46,7 @@ public class DataStructures {
              }
         }
         System.out.println("The element " + key + " was the most frequent by count of " + compare);
+
+
     }
 }
