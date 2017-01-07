@@ -7,22 +7,31 @@ public class Variables {
 
     public static void main(String args[]) {
 
-//        Scanner scanner = new Scanner(System.in);
-//        Object response = scanner.next();
-//        Object question1 = usingVariables(response);
+        usingVariables();
         boolean question2 = isOdd(4);
         String question3 = printHelloWorld();
         ArrayList<Integer> question4 = greatestCommonFactor(18, 24);
 
-//        System.out.println(question1);
         System.out.println(question2);
         System.out.println(question3);
         System.out.println(question4);
 
     }
 
-    private static Object usingVariables(Object input) {
-        return input;
+    private static void usingVariables() {
+        int classNum = 113;
+        double longNum = 2.71828;
+        String subject = "ComputerScience";
+
+        if(classNum == 113){
+            System.out.println("This is room # " + classNum);
+        }
+        if (longNum == 2.71828){
+            System.out.println("e is close to " + longNum);
+        }
+        if (subject.equals("ComputerScience")){
+            System.out.println("I am learning a bit about " + subject);
+        }
     }
 
     public static boolean isOdd(int i) {
