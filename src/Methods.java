@@ -107,7 +107,7 @@ public class Methods {
     * Write a method called isMultiple that takes 2 int parameters
     * and determines if the second is a multiple of the first.
     */
-    public static int random(int a, int b) {
+    public static int random(int a, int b)  {
         Random rand = new Random();
         int num = 0;
         boolean isBetween = false;
