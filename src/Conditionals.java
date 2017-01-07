@@ -20,7 +20,7 @@ public class Conditionals {
         System.out.println(isFromLondon(david));
         nameLengthAtLeast5(sam);
         nameLengthAtLeast5(david);
-        System.out.println(evenlySpaced(6, 2, 8));
+        System.out.println(evenlySpaced(93, 99, 96));
     }
 
     public static boolean isOdd(int n) {
