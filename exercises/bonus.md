@@ -4,8 +4,11 @@
 
 #### FizzBuzz
 > 1. [Project Euler #1 - Multiples of 3 and 5](https://projecteuler.net/problem=1)
-> 2. Modify this code to write FizzBuzz. Print out each of the numbers from 1 to 1000. If the number is divisible by 3 then print "Fizz" instead of the number. If the number is divisible by 5 then print "Buzz" instead of the number. If the number is divisible by both then print "Fizzbuzz".
-> 3. Modify this code again: instead of replacing numbers if they are divisible by 3 and 5, print "Fizz" if the number contains a 3 and "Buzz" if the number contains a 5, and "Fizzbuzz" if it contains both.
+> 2. Modify this code to write FizzBuzz. Print out each of the numbers from 1 to 1000. If the number is 
+     divisible by 3 then print "Fizz" instead of the number. If the number is divisible by 5 then print "Buzz" 
+     instead of the number. If the number is divisible by both then print "Fizzbuzz".
+> 3. Modify this code again: instead of replacing numbers if they are divisible by 3 and 5, print "Fizz" if 
+     the number contains a 3 and "Buzz" if the number contains a 5, and "Fizzbuzz" if it contains both.
 > 4. Read [this](http://c2.com/cgi/wiki?FizzBuzzTest) for more on FizzBuzz.
 
 #### Collatz

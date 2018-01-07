@@ -33,7 +33,8 @@ What needs to be changed to make this work on an array of Strings?
 
 ####4. canRentACar
 
-Write a method called `canRentACar` that takes the Pod HashMap as a parameter and returns whether or not the Pod can rent a car. If one or more studetns is over 25, it should return `true`. If no one in the Pod is over 25, it should return `false`.
+Write a method called `canRentACar` that takes the Pod HashMap as a parameter and returns whether or not the 
+Pod can rent a car. If one or more studetns is over 25, it should return `true`. If no one in the Pod is over 25, it should return `false`.
 
 ###Exercises++
 
@@ -60,3 +61,5 @@ countClumps({1, 1, 1, 1, 1}) → 1
 ####7. Sorting sentences
 
 Write a method that takes a String sentence, breaks it up into an ArrayList of Strings (one word per ArrayList element), and prints out the words in alphabetical order.
+        
+        
